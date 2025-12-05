@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A dataset of the planet's most interesting places",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "start": "node server.js"
   },
