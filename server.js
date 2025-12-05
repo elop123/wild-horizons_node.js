@@ -2,6 +2,7 @@ import http from 'node:http'
 import { getDataFromDB } from './db.js'
 import { sendJSONResponse } from './utils/sendJSONResponse.js'
 import { getDataByPathParams } from './utils/getDataByPathParams.js'
+import { getDataByQueryParams } from './utils/getDataByQueryParams.js'
 
 const PORT = 8000
 
@@ -14,7 +15,7 @@ const queryObj = Object.fromEntries(urlObj.searchParams)
 
 
 if(urlObj.pathname === '/api' && req.method === 'GET'){
-let filteredDestinations =destinations
+let filteredDestinations =getDataByQueryParams(destinations, queryObj)
 
 console.log(queryObj)
 //update filteredDestinations
