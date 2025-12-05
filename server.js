@@ -12,6 +12,11 @@ if(req.url === '/api' && req.method === 'GET'){
 res.setHeader('Content-Type', 'application/json')
 res.statusCode = 200
 res.end(JSON.stringify(destinations))
+}else{
+    res.setHeader('Content-Type', 'application/json')
+    res.statusCode = 404
+    res.end(JSON.stringify({error: "not found", message: "The requested route does not exist"
+    }))
 }
 })
 
